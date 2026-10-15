@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Especialidades | CMP MINSA - Sede Central</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fafcfc;
+      color: #1a2c3e;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .page-header {
+      background: linear-gradient(107deg, #0a2f3b 0%, #1e4e5f 100%);
+      color: white;
+      padding: 40px 0;
+    }
+
+    .page-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .page-header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+    }
+
+    .page-header p {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-top: 6px;
+    }
+
+    .btn-volver {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-volver:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateX(-4px);
+    }
+
+    /* Grid de especialidades */
+    .especialidades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+      padding: 60px 0;
+    }
+
+    .especialidad-card {
+      background: white;
+      border-radius: 24px;
+      padding: 32px 24px;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 8px 20px -10px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .especialidad-card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 0;
+      background: #006b5e;
+      transition: height 0.3s ease;
+    }
+
+    .especialidad-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -12px rgba(0,107,94,0.2);
+      border-color: #bcdcd6;
+    }
+
+    .especialidad-card:hover:before {
+      height: 100%;
+    }
+
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      background: #e6f4f1;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: #006b5e;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+
+    .especialidad-card:hover .card-icon {
+      background: #006b5e;
+      color: white;
+      transform: rotate(-5deg) scale(1.05);
+    }
+
+    .especialidad-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #124e46;
+      margin-bottom: 10px;
+    }
+
+    .especialidad-card p {
+      font-size: 0.9rem;
+      color: #557275;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .card-link {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #006b5e;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.2s;
+    }
+
+    .especialidad-card:hover .card-link {
+      gap: 12px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0c2f2c;
+      color: #c8e2dd;
+      padding: 30px 0;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 { font-size: 1.6rem; }
+      .especialidades-grid { padding: 30px 0; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="page-header">
+    <div class="container">
+      <div>
+        <h1><i class="fas fa-stethoscope"></i> Especialidades Médicas</h1>
+        <p>Conoce cada una de nuestras especialidades y sus servicios</p>
+      </div>
+      <a href="index.html" class="btn-volver">
+        <i class="fas fa-arrow-left"></i> Volver al inicio
+      </a>
+    </div>
+  </header>
+
+  <!-- Grid de especialidades -->
+  <section class="container">
+    <div class="especialidades-grid">
+      
+      <!-- Cardiología -->
+      <a href="cardiologia.html" class="especialidad-card">
+        <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+        <h3>Cardiología</h3>
+        <p>Consulta especializada y electrocardiogramas para el cuidado de tu corazón.</p>
+        <span class="card-link">Ver más <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Medicina Interna -->
+      <a href="medicina-interna.html" class="especialidad-card">
+        <div class="card-icon"><i class="fas fa-brain"></i></div>
+        <h3>Medicina Interna</h3>
+        <p>Control integral de patologías crónicas y diagnóstico clínico avanzado.</p>
+        <span class="card-link">Ver más <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Gineco-Obstetricia -->
+      <a href="gineco-obstetricia.html" class="especialidad-card">
+        <div class="card-icon"><i class="fas fa-baby-carriage"></i></div>
+        <h3>Gineco-Obstetricia</h3>
+        <p>Maternidad segura, control prenatal y salud de la mujer.</p>
+        <span class="card-link">Ver más <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Pediatría -->
+      <a href="pediatria.html" class="especialidad-card">
+        <div class="card-icon"><i class="fas fa-child"></i></div>
+        <h3>Pediatría</h3>
+        <p>Desarrollo del niño, inmunización y cuidado integral infantil.</p>
+        <span class="card-link">Ver más <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Ortopedia -->
+      <a href="ortopedia.html" class="especialidad-card">
+        <div class="card-icon"><i class="fas fa-crutch"></i></div>
+        <h3>Ortopedia y Traumatología</h3>
+        <p>Cirugías, yesos y tratamiento de lesiones del sistema músculo-esquelético.</p>
+        <span class="card-link">Ver más <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Cirugía General -->
+      <a href="cirugia-general.html" class="especialidad-card">
+        <div class="card-icon"><i class="fas fa-user-md"></i></div>
+        <h3>Cirugía General</h3>
+        <p>Procedimientos quirúrgicos con tecnología de punta y personal especializado.</p>
+        <span class="card-link">Ver más <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Oftalmología -->
+      <a href="oftalmologia.html" class="especialidad-card">
+        <div class="card-icon"><i class="fas fa-eye"></i></div>
+        <h3>Oftalmología</h3>
+        <p>Salud visual del asegurado, diagnóstico y tratamiento ocular.</p>
+        <span class="card-link">Ver más <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+      <!-- Odontología -->
+      <a href="odontologia.html" class="especialidad-card">
+        <div class="card-icon"><i class="fas fa-tooth"></i></div>
+        <h3>Odontología Integral</h3>
+        <p>Cuidado bucal preventivo y tratamientos dentales completos.</p>
+        <span class="card-link">Ver más <i class="fas fa-arrow-right"></i></span>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 CMP MINSA - Sede Central · Comprometidos con la salud del trabajador · Nicaragua</p>
+    </div>
+  </footer>
+
+</body>
+</html>
