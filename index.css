@@ -692,3 +692,32 @@ footer {
     left: -10px;
   }
 }
+
+/* ============================================
+   BOTÓN DE UBICACIÓN EN MAPA
+   ============================================ */
+.btn-ubicacion-mapa {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #006b5e 0%, #004d44 100%);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 10px 25px -10px rgba(0, 107, 94, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-ubicacion-mapa:hover {
+  background: linear-gradient(135deg, #007f6e 0%, #006b5e 100%);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 35px -10px rgba(0, 107, 94, 0.6);
+  color: white;
+}
+
+.btn-ubicacion-mapa i {
+  font-size: 1.1rem;
+}
