@@ -8,6 +8,63 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="especialidad.css">
+  <style>
+    /* Estilo PRO: Imagen a la derecha, texto a la izquierda */
+    .hero-hospital {
+      display: flex;
+      align-items: center;
+      background: #f4f9f8;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px -10px rgba(0, 107, 94, 0.15);
+    }
+
+    .hero-hospital-text {
+      flex: 1;
+      padding: 50px;
+    }
+
+    .hero-hospital-text h2 {
+      font-size: 2.5rem;
+      color: #006b5e;
+      font-weight: 800;
+      margin-bottom: 15px;
+      line-height: 1.2;
+    }
+
+    .hero-hospital-text p {
+      font-size: 1.1rem;
+      color: #4a6163;
+      line-height: 1.6;
+    }
+
+    .hero-hospital-img {
+      flex: 1;
+      min-height: 400px;
+      /* AQUÍ ESTÁ LA MAGIA: La imagen se ve clara */
+      background-image: url('Image/Hospital_Solidaridad.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero-hospital {
+        flex-direction: column-reverse;
+      }
+      .hero-hospital-text {
+        padding: 30px 20px;
+        text-align: center;
+      }
+      .hero-hospital-text h2 {
+        font-size: 1.8rem;
+      }
+      .hero-hospital-img {
+        width: 100%;
+        min-height: 250px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -76,6 +133,14 @@
 <main class="esp-content">
   <div class="container">
 
+    <!-- SECCIÓN DE PORTADA: Texto a la izquierda, Imagen clara a la derecha -->
+    <div class="hero-hospital">
+      <div class="hero-hospital-text">
+        <h2>Hospital Solidaridad</h2>
+        <p>Comprometidos con la salud y el bienestar de nuestros asegurados. Un centro de referencia nacional con atención de alta complejidad y tecnología de vanguardia.</p>
+      </div>
+      <div class="hero-hospital-img"></div>
+    </div>
 
     <!-- 2. CAPACIDAD OPERATIVA E INFRAESTRUCTURA -->
     <div class="esp-section">
