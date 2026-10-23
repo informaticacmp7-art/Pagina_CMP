@@ -10,8 +10,15 @@
   <link rel="stylesheet" href="../especialidad.css">
   <style>
     /* =========================================
-       CSS CORREGIDO: MENÚ MÁS PEGADO Y TEXTO MÁS GRANDE
+       CSS CORREGIDO: MENÚ Y HEADER MÁS BAJO
        ========================================= */
+    
+    /* 1. Hacemos la barra verde (header) menos alta */
+    .esp-header {
+      padding: 10px 0 !important; /* Antes era 70px, ahora es 30px */
+    }
+
+    /* 2. Alineación del menú */
     .nav-flex {
       display: flex;
       align-items: center;
@@ -23,17 +30,17 @@
       display: flex;
       align-items: center;
       justify-content: flex-end !important;
-      gap: 25px !important; /* <--- Menos espacio entre opciones (antes 15px) */
+      gap: 25px !important;
       flex-wrap: nowrap !important;
     }
     
     .nav-links a {
-      font-size: 1.06rem !important; /* <--- Texto un poco más grande (antes 0.85rem) */
+      font-size: 1.06rem !important;
       white-space: nowrap;
     }
     
     .logo-area h1 {
-      font-size: 1.15rem !important; /* <--- Título un poco más grande */
+      font-size: 1.15rem !important;
       white-space: nowrap;
     }
     
@@ -42,7 +49,7 @@
     }
     
     .btn-horario-wrapper {
-      margin-left: 8px; /* Espacio entre "Contacto" y el botón */
+      margin-left: 8px;
       display: flex;
       align-items: center;
     }
@@ -53,7 +60,6 @@
       font-size: 0.85rem !important;
     }
     
-    /* Si la pantalla es muy pequeña, permitimos que se adapte */
     @media (max-width: 1100px) {
       .nav-flex, .nav-links {
         flex-wrap: wrap !important;
@@ -62,6 +68,9 @@
       }
       .logo-area h1 {
         font-size: 1rem !important;
+      }
+      .esp-header {
+        padding: 20px 0 !important; /* Aún más bajo en celulares */
       }
     }
   </style>
@@ -118,14 +127,14 @@
       
       <li><a href="#">Consultas</a></li>
       
-      <li class="dropdown">
-        <a href="#" class="dropbtn">Horarios <i class="fas fa-chevron-down dropdown-arrow"></i></a>
-        <ul class="dropdown-content">
-          <li><a href="#"><span class="menu-title"><i class="far fa-clock"></i> <strong>Sede Central:</strong></span><span class="menu-desc">Lunes a Viernes (8:00 AM - 5:00 PM)</span></a></li>
-          <li><a href="#"><span class="menu-title"><i class="far fa-clock"></i> <strong>Sábados:</strong></span><span class="menu-desc">Personal mínimo</span></a></li>
-          <li><a href="#"><span class="menu-title"><i class="fas fa-exclamation-circle text-danger"></i> <strong>Urgencias:</strong></span><span class="menu-desc">Abierto 24/7</span></a></li>
-        </ul>
-      </li>
+<li class="dropdown">
+  <a href="#" class="dropbtn">Horarios <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+  <ul class="dropdown-content">
+    <li><a href="#"><span class="menu-title"><i class="far fa-clock"></i> <strong>Lunes a Viernes:</strong></span><span class="menu-desc">7:00 AM - 4:00 PM (Administrativo)</span></a></li>
+    <li><a href="#"><span class="menu-title"><i class="fas fa-user-md"></i> <strong>Personal Médico:</strong></span><span class="menu-desc">En turnos (24/7)</span></a></li>
+    <li><a href="#"><span class="menu-title"><i class="fas fa-exclamation-circle text-danger"></i> <strong>Urgencias:</strong></span><span class="menu-desc">Abierto 24/7</span></a></li>
+  </ul>
+</li>
       
       <li class="dropdown">
         <a href="#" class="dropbtn">Contacto <i class="fas fa-chevron-down dropdown-arrow"></i></a>
@@ -153,33 +162,31 @@
   <main class="esp-content">
     <div class="container">
 
-      <!-- SECCIÓN DE PORTADA CON IMAGEN (Opcional, igual que Cardiología) -->
-      <div class="hero-especialidad">
-        <div class="hero-especialidad-text">
-          <h2>Filial Rivas</h2>
-          <p>Atención médica integral para los trabajadores asegurados y sus familias en el departamento de Rivas, con un equipo humano comprometido con la salud y el bienestar de la población.</p>
-        </div>
-        <div class="hero-especialidad-img"></div>
-      </div>
-
       <div class="esp-section">
         <h2><i class="fas fa-info-circle"></i> Sobre nuestra Filial Rivas</h2>
         <p>La Filial de Rivas del CMP brinda atención médica integral a los trabajadores asegurados y sus familias en el departamento de Rivas y zonas aledañas. Ubicada en el Hospital Gaspar García Laviana, es un punto de referencia en la atención médica previsional del Pacífico Sur de Nicaragua.</p>
         <p>Su estratégica ubicación sobre la Carretera Panamericana permite atender a asegurados provenientes de los municipios de Rivas, San Jorge, Buenos Aires, Potosí, Belén, Tola, San Juan del Sur, Cárdenas, Moyogalpa y Altagracia (Isla de Ometepe).</p>
       </div>
 
+      <!-- NUEVA SECCIÓN: INFRAESTRUCTURA Y MODERNIZACIÓN -->
       <div class="esp-section">
-        <h2><i class="fas fa-map-marker-alt"></i> Información de contacto</h2>
-        <div class="filial-info-grid">
-          <div class="filial-info-card"><span class="info-icon"><i class="fas fa-map-pin"></i></span><strong>Dirección</strong><span>Barrio San Jorge, Hospital Gaspar García Laviana, Rivas, Nicaragua</span></div>
-          <div class="filial-info-card"><span class="info-icon"><i class="fas fa-phone"></i></span><strong>Teléfono</strong><span>+505 2563-2200</span></div>
-          <div class="filial-info-card"><span class="info-icon"><i class="fas fa-envelope"></i></span><strong>Correo</strong><span>rivas@cmp.gob.ni</span></div>
-          <div class="filial-info-card"><span class="info-icon"><i class="fas fa-clock"></i></span><strong>Horario</strong><span>Lun-Vie 8:00 AM - 5:00 PM</span></div>
-        </div>
+        <h2><i class="fas fa-building"></i> Infraestructura y Modernización</h2>
+        <p>El Hospital Gaspar García Laviana ha sido objeto de importantes obras de mejoramiento y ampliación para brindar una atención con mayor calidad y calidez a los asegurados. En septiembre de 2026, se inauguraron modernas instalaciones que representaron una inversión superior a los <strong>13 millones de córdobas</strong>.</p>
+        <ul>
+          <li><strong>Nuevas Áreas Clínicas:</strong> Se habilitaron áreas de hospitalización, quirófano, pre-labor, recuperación y una moderna sala de emergencia.</li>
+          <li><strong>Remodelación Integral:</strong> Se realizó el cambio total del techo, pintura general de las áreas de hospitalización y quirófanos, además de la instalación de nuevas ventanas.</li>
+          <li><strong>Equipamiento de Punta:</strong> Cuenta con equipos de tecnología avanzada para la detección temprana de enfermedades, incluyendo estudios para la prevención del cáncer en la mujer.</li>
+        </ul>
       </div>
 
+      <!-- NUEVA SECCIÓN: COBERTURA Y SUB-FILIALES -->
       <div class="esp-section">
-        <h2><i class="fas fa-users"></i> Cobertura departamental</h2>
+        <h2><i class="fas fa-users"></i> Cobertura y Sub-Filiales</h2>
+        <p>La Filial de Rivas tiene una cobertura estimada de más de <strong>17,000 trabajadores asegurados</strong> y atiende a más de <strong>2,000 adultos mayores</strong> del departamento. Para acercar los servicios a la población, cuenta con dos sub-filiales estratégicas:</p>
+        <ul>
+          <li><strong>Sub-Filial Casur:</strong> Ubicada en la zona costera, facilita la atención de los asegurados que laboran en el sector turístico y pesquero.</li>
+          <li><strong>Sub-Filial Ometepe:</strong> Brinda servicios en la Isla de Ometepe, evitando que los asegurados tengan que cruzar el lago para recibir atención médica.</li>
+        </ul>
         <p>Esta filial atiende a los trabajadores asegurados de los siguientes municipios del departamento de Rivas:</p>
         <ul>
           <li>Rivas (cabecera departamental)</li>
@@ -196,6 +203,17 @@
       </div>
 
       <div class="esp-section">
+        <h2><i class="fas fa-map-marker-alt"></i> Información de contacto</h2>
+        <div class="filial-info-grid">
+          <!-- Dirección exacta actualizada -->
+          <div class="filial-info-card"><span class="info-icon"><i class="fas fa-map-pin"></i></span><strong>Dirección</strong><span>Rotonda Jesús del Rescate 300 mts. al este, carretera a San Jorge, Barrio Gaspar García Laviana, Rivas.</span></div>
+          <div class="filial-info-card"><span class="info-icon"><i class="fas fa-phone"></i></span><strong>Teléfono</strong><span>+505 2563-2200</span></div>
+          <div class="filial-info-card"><span class="info-icon"><i class="fas fa-envelope"></i></span><strong>Correo</strong><span>rivas@cmp.gob.ni</span></div>
+          <div class="filial-info-card"><span class="info-icon"><i class="fas fa-clock"></i></span><strong>Horario</strong><span>Lun-Vie 8:00 AM - 5:00 PM</span></div>
+        </div>
+      </div>
+
+      <div class="esp-section">
         <h2><i class="fas fa-stethoscope"></i> Servicios disponibles</h2>
         <div class="filial-servicios">
           <div class="filial-servicio-item"><i class="fas fa-heartbeat"></i> Cardiología</div>
@@ -208,6 +226,9 @@
           <div class="filial-servicio-item"><i class="fas fa-flask"></i> Laboratorio Clínico</div>
           <div class="filial-servicio-item"><i class="fas fa-pills"></i> Farmacia</div>
           <div class="filial-servicio-item"><i class="fas fa-ambulance"></i> Urgencias</div>
+          <!-- Servicios adicionales confirmados -->
+          <div class="filial-servicio-item"><i class="fas fa-leaf"></i> Medicina Natural</div>
+          <div class="filial-servicio-item"><i class="fas fa-x-ray"></i> Rayos X</div>
         </div>
       </div>
 
