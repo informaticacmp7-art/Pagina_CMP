@@ -7,6 +7,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="index.css">
+  
+  <style>
+    /* =========================================
+       ESTILOS PARA LA GALERÍA ROTATIVA (HERO)
+       ========================================= */
+    
+    /* Contenedor de las imágenes */
+    .hero-slider-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border-radius: 28px;
+      overflow: hidden;
+      background-color: #f0f8f5;
+      box-shadow: 0 20px 40px -15px rgba(0, 51, 56, 0.15);
+    }
+
+    /* Cada imagen dentro del slider */
+    .hero-slide-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out; /* Transición suave de 1 segundo */
+      z-index: 1;
+    }
+
+    /* La imagen activa */
+    .hero-slide-img.active {
+      opacity: 1;
+      z-index: 2;
+    }
+
+    /* Ajuste para móviles */
+    @media (max-width: 800px) {
+      .hero-slider-container {
+        min-height: 250px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -57,15 +101,15 @@
           </ul>
         </li>
         <li><a href="#">Consultas</a></li>
-<li class="dropdown">
-  <a href="#" class="dropbtn">Horarios <i class="fas fa-chevron-down dropdown-arrow"></i></a>
-  <ul class="dropdown-content">
-    <li><a href="#"><span class="menu-title"><i class="far fa-clock"></i> <strong>Sede Central:</strong></span><span class="menu-desc">Lunes a Viernes (8:00 AM - 5:00 PM) - Administrativo</span></a></li>
-    <li><a href="#"><span class="menu-title"><i class="far fa-clock"></i> <strong>Filiales:</strong></span><span class="menu-desc">Lunes a Viernes (7:00 AM - 4:00 PM) - Administrativo</span></a></li>
-    <li><a href="#"><span class="menu-title"><i class="fas fa-user-md"></i> <strong>Personal Médico:</strong></span><span class="menu-desc">En turnos (24/7)</span></a></li>
-    <li><a href="#"><span class="menu-title"><i class="fas fa-exclamation-circle text-danger"></i> <strong>Urgencias:</strong></span><span class="menu-desc">Abierto 24/7</span></a></li>
-  </ul>
-</li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Horarios <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+          <ul class="dropdown-content">
+            <li><a href="#"><span class="menu-title"><i class="far fa-clock"></i> <strong>Sede Central:</strong></span><span class="menu-desc">Lunes a Viernes (8:00 AM - 5:00 PM) - Administrativo</span></a></li>
+            <li><a href="#"><span class="menu-title"><i class="far fa-clock"></i> <strong>Filiales:</strong></span><span class="menu-desc">Lunes a Viernes (7:00 AM - 4:00 PM) - Administrativo</span></a></li>
+            <li><a href="#"><span class="menu-title"><i class="fas fa-user-md"></i> <strong>Personal Médico:</strong></span><span class="menu-desc">En turnos (24/7)</span></a></li>
+            <li><a href="#"><span class="menu-title"><i class="fas fa-exclamation-circle text-danger"></i> <strong>Urgencias:</strong></span><span class="menu-desc">Abierto 24/7</span></a></li>
+          </ul>
+        </li>
         <li class="dropdown">
           <a href="#" class="dropbtn">Contacto <i class="fas fa-chevron-down dropdown-arrow"></i></a>
           <ul class="dropdown-content">
@@ -86,13 +130,25 @@
           <h2>Compromiso con la salud<br>y el bienestar de nuestros asegurados</h2>
           <p>Las Clínicas Médicas Previsionales (CMP) son la red del Ministerio de Salud encargada de brindar atención médica integral, oportuna y humana a los trabajadores asegurados, sus familias y pensionados en Nicaragua.</p>
         </div>
+        
+        <!-- GALERÍA ROTATIVA SIN OVERLAY OSCURO NI TEXTO -->
         <div class="hero-image">
-          <div class="hero-display-card">
-            <img src="Image/logo.png.png" alt="Logo CMP" class="hero-logo-img">
-            <h3>CMP</h3>
-            <p>Calidad y Calidez Humana</p>
+          <div class="hero-slider-container">
+            <!-- Imagen 1: Solidaridad -->
+            <img src="Image/Solidaridad.jpeg" alt="Hospital Solidaridad" class="hero-slide-img active">
+            <!-- Imagen 2: 47_19 -->
+            <img src="Image/47_19.jpg" alt="Instalaciones CMP" class="hero-slide-img">
+            <!-- Imagen 3: Bilwi -->
+            <img src="Image/Bilwi.jpg" alt="Filial Bilwi" class="hero-slide-img">
+            <!-- Imagen 4: Chinandega -->
+            <img src="Image/Chinandega.jpg" alt="Filial Chinandega" class="hero-slide-img">
+            <!-- Imagen 5: Chontales -->
+            <img src="Image/Chontales.jpg" alt="Filial Chontales" class="hero-slide-img">
+            <!-- Imagen 6: Velez_Paiz -->
+            <img src="Image/Velez_Paiz.jpg" alt="Filial Velez Paiz" class="hero-slide-img">
           </div>
         </div>
+
       </div>
     </section>
 
@@ -184,6 +240,25 @@
     });
     window.addEventListener('click', function(e) {
       if (!e.target.closest('.dropdown')) document.querySelectorAll('.dropdown').forEach(drop => drop.classList.remove('active'));
+    });
+
+    // SCRIPT PARA LA GALERÍA ROTATIVA
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.hero-slide-img');
+      if (slides.length === 0) return;
+      
+      let currentIndex = 0;
+      
+      setInterval(() => {
+        // Ocultar la imagen actual
+        slides[currentIndex].classList.remove('active');
+        
+        // Calcular la siguiente imagen
+        currentIndex = (currentIndex + 1) % slides.length;
+        
+        // Mostrar la nueva imagen
+        slides[currentIndex].classList.add('active');
+      }, 5000); // 5000 milisegundos = 5 segundos
     });
   </script>
 </body>
